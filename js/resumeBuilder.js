@@ -17,29 +17,80 @@ var bio = {
     "father", "photographer",
   ],
   "bioPic" : "images/fry.jpg"
-}
+};
 
-var formattedName = HTMLheaderName.replace("%data%", bio.name);
-var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
-var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
-var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-var formattedPic = HTMLbioPic.replace("%data%", bio.bioPic);
-var formattedMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-// var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-// var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-HTMLemail
+var education = {
+  "schools": [
+    {
+      "name": "Sullivan University",
+      "location": "Louisville, KY, USA",
+      "degree": "Assoicates",
+      "majors": "Programming",
+      "dates": "2006-2008",
+      "url": "http://example.com"
+    }
+  ],
+  "onlineCourses": [
+    {
+      "title": "title",
+      "school": "school",
+      "dates": "dates",
+      "url": "http://example.com"
+    }
+  ]
+};
 
-$("#header").prepend(formattedRole);
-$("#header").prepend(formattedName);
-$("#header").prepend(formattedPic);
+var work = {
+  "jobs": [
+    {
+      "employer": "US Navy",
+      "title": "Machinest Mate 3rd Class",
+      "location": "Mayport, FL, USA",
+      "dates": "1996 - 2001",
+      "description": "Kogi DIY tilde next level. Thundercats actually pickled fanny pack. Freegan pug knausgaard, DIY art party bicycle rights sartorial leggings gochujang scenester pour-over salvia meditation umami."
+    },
+    {
+      "employer": "Insight Communications, Inc",
+      "title": "Change Management Analyst",
+      "location": "Louisville, KY, USA",
+      "dates": "2002 - 2008",
+      "description": "Kogi DIY tilde next level. Thundercats actually pickled fanny pack. Freegan pug knausgaard, DIY art party bicycle rights sartorial leggings gochujang scenester pour-over salvia meditation umami."
+    },
+    {
+      "employer": "Kindred Healthcare, Inc",
+      "title": "Change Management Analyst",
+      "location": "Louisville, KY, USA",
+      "dates": "2008",
+      "description": "Kogi DIY tilde next level. Thundercats actually pickled fanny pack. Freegan pug knausgaard, DIY art party bicycle rights sartorial leggings gochujang scenester pour-over salvia meditation umami."
+    },
+    {
+      "employer": "UPS Supply Chain Solutions",
+      "title": "Computer Repair Technician",
+      "location": "Louisville, KY, USA",
+      "dates": "Dec 2009 - May 2010",
+      "description": "Kogi DIY tilde next level. Thundercats actually pickled fanny pack. Freegan pug knausgaard, DIY art party bicycle rights sartorial leggings gochujang scenester pour-over salvia meditation umami."
+    },
+    {
+      "employer": "Apple, Inc",
+      "title": "Genius",
+      "location": "Houston, TX, USA and Glasgow, Scotland, UK",
+      "dates": "Oct 2010 - Current",
+      "description": "Kogi DIY tilde next level. Thundercats actually pickled fanny pack. Freegan pug knausgaard, DIY art party bicycle rights sartorial leggings gochujang scenester pour-over salvia meditation umami."
+    },
+  ]
+};
 
-$("#footerContacts").prepend(formattedGithub);
-$("#footerContacts").prepend(formattedTwitter);
-$("#topContacts").prepend(formattedEmail);
-// $("#header").prepend(formattedName);
-// $("#header").prepend(formattedName);
-// $("#header").prepend(formattedName);
-// $("#header").prepend(formattedName);
-// $("#main").append(bio.name);
+var projects = {
+  "projects": [
+    {
+    "title": "title",
+    "dates": "dates",
+    "description": "Kogi DIY tilde next level. Thundercats actually pickled fanny pack. Freegan pug knausgaard, DIY art party bicycle rights sartorial leggings gochujang scenester pour-over salvia meditation umami."
+    },
+    {
+    "title": "title",
+    "dates": "dates",
+    "description": "Kogi DIY tilde next level. Thundercats actually pickled fanny pack. Freegan pug knausgaard, DIY art party bicycle rights sartorial leggings gochujang scenester pour-over salvia meditation umami."
+    }
+  ]
+};

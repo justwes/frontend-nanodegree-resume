@@ -14,7 +14,7 @@ var bio = {
   },
   "welcomeMessage" : "Kogi DIY tilde next level. Thundercats actually pickled fanny pack. Freegan pug knausgaard, DIY art party bicycle rights sartorial leggings gochujang scenester pour-over salvia meditation umami.",
   "skills" : [
-    "father", "photographer",
+    "father", "photographer"
   ],
   "bioPic" : "images/fry.jpg"
 };
@@ -24,7 +24,7 @@ var education = {
     {
       "name": "Sullivan University",
       "location": "Louisville, KY, USA",
-      "degree": "Assoicates",
+      "degree": "Associates",
       "majors": "Programming",
       "dates": "2006-2008",
       "url": "http://example.com"
@@ -93,4 +93,33 @@ var projects = {
     "description": "Kogi DIY tilde next level. Thundercats actually pickled fanny pack. Freegan pug knausgaard, DIY art party bicycle rights sartorial leggings gochujang scenester pour-over salvia meditation umami."
     }
   ]
+};
+
+for (job in work.jobs) {
+  $("#workExperience").append(HTMLworkStart);
+
+  var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+
+  var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+  var formattedEmployerTitle = formattedEmployer + formattedTitle;
+
+  $(".work-entry:last").append(formattedEmployerTitle);
+}
+
+
+
+
+
+if(bio.skills.length > 0) {
+
+  $("#header").append(HTMLskillsStart);
+
+  var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
+  $("#skills").append(formattedSkill);
+  formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
+  $("#skills").append(formattedSkill);
+  formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
+  $("#skills").append(formattedSkill);
+  formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
+  $("#skills").append(formattedSkill);
 };

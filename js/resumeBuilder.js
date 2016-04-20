@@ -2,10 +2,11 @@
 This is empty on purpose! Your code to build the resume will go here.
  */
 
+// Site data starts here
 
 var bio = {
   "name" : "Wes Chamness",
-  "role" : "Front End Developer",
+  "role" : "Front-end Developer",
   "contacts" : {
     "email" : "justwes@gmail.com",
     "github" : "justwes",
@@ -43,24 +44,10 @@ var education = {
 var work = {
   "jobs": [
     {
-      "employer": "US Navy",
-      "title": "Machinest Mate 3rd Class",
-      "location": "Mayport, FL, USA",
-      "dates": "1996 - 2001",
-      "description": "Kogi DIY tilde next level. Thundercats actually pickled fanny pack. Freegan pug knausgaard, DIY art party bicycle rights sartorial leggings gochujang scenester pour-over salvia meditation umami."
-    },
-    {
-      "employer": "Insight Communications, Inc",
-      "title": "Change Management Analyst",
-      "location": "Louisville, KY, USA",
-      "dates": "2002 - 2008",
-      "description": "Kogi DIY tilde next level. Thundercats actually pickled fanny pack. Freegan pug knausgaard, DIY art party bicycle rights sartorial leggings gochujang scenester pour-over salvia meditation umami."
-    },
-    {
-      "employer": "Kindred Healthcare, Inc",
-      "title": "Change Management Analyst",
-      "location": "Louisville, KY, USA",
-      "dates": "2008",
+      "employer": "Apple, Inc",
+      "title": "Genius",
+      "location": "Houston, TX, USA and Glasgow, Scotland, UK",
+      "dates": "Oct 2010 - Current",
       "description": "Kogi DIY tilde next level. Thundercats actually pickled fanny pack. Freegan pug knausgaard, DIY art party bicycle rights sartorial leggings gochujang scenester pour-over salvia meditation umami."
     },
     {
@@ -71,10 +58,24 @@ var work = {
       "description": "Kogi DIY tilde next level. Thundercats actually pickled fanny pack. Freegan pug knausgaard, DIY art party bicycle rights sartorial leggings gochujang scenester pour-over salvia meditation umami."
     },
     {
-      "employer": "Apple, Inc",
-      "title": "Genius",
-      "location": "Houston, TX, USA and Glasgow, Scotland, UK",
-      "dates": "Oct 2010 - Current",
+      "employer": "Kindred Healthcare, Inc",
+      "title": "Change Management Analyst",
+      "location": "Louisville, KY, USA",
+      "dates": "2008",
+      "description": "Kogi DIY tilde next level. Thundercats actually pickled fanny pack. Freegan pug knausgaard, DIY art party bicycle rights sartorial leggings gochujang scenester pour-over salvia meditation umami."
+    },
+    {
+      "employer": "Insight Communications, Inc",
+      "title": "Change Management Analyst",
+      "location": "Louisville, KY, USA",
+      "dates": "2002 - 2008",
+      "description": "Kogi DIY tilde next level. Thundercats actually pickled fanny pack. Freegan pug knausgaard, DIY art party bicycle rights sartorial leggings gochujang scenester pour-over salvia meditation umami."
+    },
+    {
+      "employer": "US Navy",
+      "title": "Machinest Mate 3rd Class",
+      "location": "Mayport, FL, USA",
+      "dates": "1996 - 2001",
       "description": "Kogi DIY tilde next level. Thundercats actually pickled fanny pack. Freegan pug knausgaard, DIY art party bicycle rights sartorial leggings gochujang scenester pour-over salvia meditation umami."
     },
   ]
@@ -95,19 +96,32 @@ var projects = {
   ]
 };
 
+// Scripts to load data start here
+
+var formattedName = HTMLheaderName.replace("%data%", bio.name);
+var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+
+$("#header").prepend(formattedRole);
+$("#header").prepend(formattedName);
+
+
+
+
 for (job in work.jobs) {
   $("#workExperience").append(HTMLworkStart);
 
   var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
 
   var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
-  var formattedEmployerTitle = formattedEmployer + formattedTitle;
+
+  var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+
+  var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+
+  var formattedEmployerTitle = formattedEmployer + formattedTitle + formattedDates + formattedDescription;
 
   $(".work-entry:last").append(formattedEmployerTitle);
 }
-
-
-
 
 
 if(bio.skills.length > 0) {

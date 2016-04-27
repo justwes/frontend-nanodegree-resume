@@ -15,7 +15,7 @@ var bio = {
   },
   "welcomeMessage" : "Kogi DIY tilde next level. Thundercats actually pickled fanny pack. Freegan pug knausgaard, DIY art party bicycle rights sartorial leggings gochujang scenester pour-over salvia meditation umami.",
   "skills" : [
-    "father", "photographer"
+    "Father", "Photographer", "Cook", "Avid Reader"
   ],
   "bioPic" : "images/fry.jpg"
 };
@@ -77,7 +77,7 @@ var work = {
       "location": "Mayport, FL, USA",
       "dates": "1996 - 2001",
       "description": "Kogi DIY tilde next level. Thundercats actually pickled fanny pack. Freegan pug knausgaard, DIY art party bicycle rights sartorial leggings gochujang scenester pour-over salvia meditation umami."
-    },
+    }
   ]
 };
 
@@ -105,24 +105,42 @@ $("#header").prepend(formattedRole);
 $("#header").prepend(formattedName);
 
 
+var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
 
+$("#topContacts").prepend(formattedTwitter);
 
-for (job in work.jobs) {
-  $("#workExperience").append(HTMLworkStart);
+function displayWork() {
+  for (job in work.jobs) {
+    $("#workExperience").append(HTMLworkStart);
 
-  var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+    var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
 
-  var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+    var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
 
-  var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+    var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
 
-  var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+    var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
 
-  var formattedEmployerTitle = formattedEmployer + formattedTitle + formattedDates + formattedDescription;
+    var formattedEmployerTitle = formattedEmployer + formattedTitle + formattedDates + formattedDescription;
 
-  $(".work-entry:last").append(formattedEmployerTitle);
+    $(".work-entry:last").append(formattedEmployerTitle);
+  }
 }
 
+
+function locationizer(work_obj) {
+  var locationArray = [];
+
+  for (job in work_obj.jobs) {
+    var newLocation = work_obj.jobs[job].location;
+    locationArray.push(newLocation);
+  }
+
+  return locationArray;
+}
+
+
+// TODO: change bio to for loop
 
 if(bio.skills.length > 0) {
 
@@ -137,3 +155,9 @@ if(bio.skills.length > 0) {
   formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
   $("#skills").append(formattedSkill);
 };
+
+
+
+// Run fucntions at end
+
+displayWork();

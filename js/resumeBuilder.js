@@ -157,6 +157,21 @@ if(bio.skills.length > 0) {
 };
 
 
+// Function to allow name format changes via button on site
+function inName() {
+  var name = window.name;
+  name = name.trim().split(" ");
+  console.log(name);
+  name[1] = name[1].toUpperCase();
+  name[0] = name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
+
+  return name[0] +" "+ name[1];
+}
+
+var name = $("#name").text();
+// Format change button
+// $('#main').append(internationalizeButton);
+
 
 // Run fucntions at end
 

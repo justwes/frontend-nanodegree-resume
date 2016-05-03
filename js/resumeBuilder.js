@@ -11,7 +11,7 @@ var bio = {
     "email" : "justwes@gmail.com",
     "github" : "justwes",
     "twitter" : "justwes",
-    "location" : "Scotland"
+    "location" : "West Lothian, Scotland"
   },
   "welcomeMessage" : "Kogi DIY tilde next level. Thundercats actually pickled fanny pack. Freegan pug knausgaard, DIY art party bicycle rights sartorial leggings gochujang scenester pour-over salvia meditation umami.",
   "skills" : [
@@ -195,6 +195,6 @@ var name = $("#name").text();
 
 
 // Run fucntions at end
-
+$("#mapDiv").append(googleMap);
 displayWork();
 projectsDisplay();

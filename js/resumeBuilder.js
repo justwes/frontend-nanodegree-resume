@@ -93,7 +93,7 @@ var projects = {
     "dates": "dates",
     "description": "Kogi DIY tilde next level. Thundercats actually pickled fanny pack. Freegan pug knausgaard, DIY art party bicycle rights sartorial leggings gochujang scenester pour-over salvia meditation umami."
     }
-  ]
+  ],
 };
 
 // Scripts to load data start here
@@ -103,7 +103,6 @@ var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 
 $("#header").prepend(formattedRole);
 $("#header").prepend(formattedName);
-
 
 var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
 
@@ -127,7 +126,6 @@ function displayWork() {
   }
 }
 
-
 function locationizer(work_obj) {
   var locationArray = [];
 
@@ -139,8 +137,7 @@ function locationizer(work_obj) {
   return locationArray;
 }
 
-
-// TODO: change bio to for loop
+// TODO: change bio to for loop if possible
 
 if(bio.skills.length > 0) {
 
@@ -156,7 +153,6 @@ if(bio.skills.length > 0) {
   $("#skills").append(formattedSkill);
 };
 
-
 // Function to allow name format changes via button on site
 function inName() {
   var name = window.name;
@@ -168,6 +164,29 @@ function inName() {
   return name[0] +" "+ name[1];
 }
 
+ // Projects display fucntion
+projects.display = function() {
+  for (project in projects.projects) {
+    $("#projects").append(HTMLprojectStart);
+
+    var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+    $(".project-entry:last").append(formattedTitle);
+
+    var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
+    $(".project-entry:last").append(formattedDates);
+
+    var formattedDescription = HTMLprojectDescription.replace("%data", projects.projects[project].description);
+    $(".project-entry:last").append(formattedDescription);
+
+    if (projects.projects[project].images.length > 0) {
+      for (image in projects.projects[project].images) {
+        var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
+        $(".project-entry:last").append(formattedImage);
+      }
+    }
+  }
+};
+
 var name = $("#name").text();
 // Format change button
 // $('#main').append(internationalizeButton);
@@ -176,3 +195,4 @@ var name = $("#name").text();
 // Run fucntions at end
 
 displayWork();
+projects.display();

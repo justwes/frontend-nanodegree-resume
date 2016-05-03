@@ -86,11 +86,13 @@ var projects = {
     {
     "title": "title",
     "dates": "dates",
+    "images": " ",
     "description": "Kogi DIY tilde next level. Thundercats actually pickled fanny pack. Freegan pug knausgaard, DIY art party bicycle rights sartorial leggings gochujang scenester pour-over salvia meditation umami."
     },
     {
     "title": "title",
     "dates": "dates",
+    "images": " ",
     "description": "Kogi DIY tilde next level. Thundercats actually pickled fanny pack. Freegan pug knausgaard, DIY art party bicycle rights sartorial leggings gochujang scenester pour-over salvia meditation umami."
     }
   ],
@@ -165,7 +167,7 @@ function inName() {
 }
 
  // Projects display fucntion
-projects.display = function() {
+function projectsDisplay() {
   for (project in projects.projects) {
     $("#projects").append(HTMLprojectStart);
 
@@ -177,13 +179,13 @@ projects.display = function() {
 
     var formattedDescription = HTMLprojectDescription.replace("%data", projects.projects[project].description);
     $(".project-entry:last").append(formattedDescription);
-
-    if (projects.projects[project].images.length > 0) {
-      for (image in projects.projects[project].images) {
-        var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
-        $(".project-entry:last").append(formattedImage);
-      }
-    }
+// Commented out as I have no images to display for the projects
+    // if (projects.projects[project].images.length > 0) {
+    //   for (image in projects.projects[project].images) {
+    //     var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
+    //     $(".project-entry:last").append(formattedImage);
+    //   }
+    // }
   }
 };
 
@@ -195,4 +197,4 @@ var name = $("#name").text();
 // Run fucntions at end
 
 displayWork();
-projects.display();
+projectsDisplay();

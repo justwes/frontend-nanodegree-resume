@@ -183,14 +183,14 @@ work.display();
 var projects = {
   "projects": [
     {
-    "title": "title",
-    "dates": "dates",
+    "title": "title1",
+    "dates": "2016",
     "images": " ",
     "description": "Ennui direct trade beard normcore, williamsburg church-key knausgaard paleo PBR&B gochujang leggings green juice wolf pitchfork. Pitchfork blue bottle kombucha vinyl humblebrag. Squid polaroid health goth heirloom, fashion axe tilde man bun gluten-free freegan cold-pressed disrupt direct trade meditation biodiesel. Wayfarers flannel normcore blue bottle cornhole, typewriter letterpress pinterest. Mixtape seitan disrupt organic, ethical food truck mustache. Disrupt photo booth artisan, meh kinfolk post-ironic ramps hashtag salvia neutra lo-fi beard ennui synth meggings. Polaroid franzen blog health goth chicharrones."
     },
     {
-    "title": "title",
-    "dates": "dates",
+    "title": "title2",
+    "dates": "2015",
     "images": " ",
     "description": "Williamsburg cray asymmetrical quinoa tumblr echo park ugh, fingerstache venmo selvage. Tumblr trust fund bushwick paleo twee pop-up, man braid organic raw denim leggings migas retro pickled. Offal leggings irony, kinfolk pop-up intelligentsia aesthetic everyday carry +1 PBR&B. Hella pickled polaroid normcore. Celiac scenester blue bottle, viral chicharrones cred cliche letterpress wolf readymade venmo 90's pickled sustainable squid. Blog try-hard man braid vice pork belly pug, aesthetic waistcoat meditation chambray art party twee banh mi locavore. Hashtag tofu pour-over yuccie salvia letterpress."
     }

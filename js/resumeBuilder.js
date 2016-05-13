@@ -39,7 +39,7 @@ function bioDisplay() {
     $("#header").append(formattedwelcomeMsg);
 	var bioPic = HTMLbioPic.replace("%data%", bio.bioPic);
 	$("#header").prepend(bioPic);
-};
+}
 
 if (bio.skills.length > 0) {
     $("#header").append(HTMLskillsStart);
@@ -47,7 +47,7 @@ if (bio.skills.length > 0) {
 		var formattedSkills = HTMLskills.replace("%data%", bio.skills[i]);
   		$("#skills").prepend(formattedSkills);
   	}
-};
+}
 
 bioDisplay();
 
@@ -74,7 +74,7 @@ var education = {
 };
 
 function educationDisplay() {
-	for (school in education.schools) {
+	for (var school in education.schools) {
 		$("#education").append (HTMLschoolStart);
 		var formattedschoolName = HTMLschoolName.replace("%data%", education.schools[school].name);
     var formattedschoolDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
@@ -88,7 +88,7 @@ function educationDisplay() {
 
     var formattedschoolMajors = HTMLschoolMajor.replace("%data%", education.schools[school].majors);
     $(".education-entry:last").append(formattedschoolMajors);
-	};
+	}
 
 // Online course info
   if (education.onlineCourses.length > 0) {
@@ -107,7 +107,7 @@ function educationDisplay() {
     $(".education-entry:last").append(formattedonlineURL);
     }
   }
-};
+}
 
 educationDisplay();
 
@@ -160,7 +160,7 @@ var work = {
 };
 
 function displayWork() {
-  for (job in work.jobs) {
+  for (var job in work.jobs) {
     $("#workExperience").append(HTMLworkStart);
 
     var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
@@ -175,7 +175,7 @@ function displayWork() {
 
     $(".work-entry:last").append(formattedEmployerTitle);
   }
-};
+}
 
 displayWork();
 
@@ -194,11 +194,11 @@ var projects = {
     "images": " ",
     "description": "Williamsburg cray asymmetrical quinoa tumblr echo park ugh, fingerstache venmo selvage. Tumblr trust fund bushwick paleo twee pop-up, man braid organic raw denim leggings migas retro pickled. Offal leggings irony, kinfolk pop-up intelligentsia aesthetic everyday carry +1 PBR&B. Hella pickled polaroid normcore. Celiac scenester blue bottle, viral chicharrones cred cliche letterpress wolf readymade venmo 90's pickled sustainable squid. Blog try-hard man braid vice pork belly pug, aesthetic waistcoat meditation chambray art party twee banh mi locavore. Hashtag tofu pour-over yuccie salvia letterpress."
     }
-  ],
+  ]
 };
 
 function projectsDisplay() {
-  for (project in projects.projects) {
+  for (var project in projects.projects) {
     $("#projects").append(HTMLprojectStart);
 
     var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
@@ -207,7 +207,7 @@ function projectsDisplay() {
     var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
     $(".project-entry:last").append(formattedDates);
 
-    var formattedDescription = HTMLprojectDescription.replace("%data", projects.projects[project].description);
+    var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
     $(".project-entry:last").append(formattedDescription);
 // Commented out as I have no images to display for the projects
     // if (projects.projects[project].images.length > 0) {
@@ -217,7 +217,7 @@ function projectsDisplay() {
     //   }
     // }
   }
-};
+}
 
 projectsDisplay();
 
